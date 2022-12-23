@@ -105,4 +105,5 @@ table tr:nth-child(odd){
 
 #clear tr th {
     background-color: #121212;
+    border: 1px solid #121212;
 }
