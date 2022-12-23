@@ -102,6 +102,6 @@ table tr:nth-child(odd){
     background-color: #626262;
 }
 
-div lol table tr th {
+#clear tr th {
     background-color: #121212;
 }
