@@ -1,0 +1,107 @@
+@font-face{
+    font-family: Walshiem;
+    src: url(GT-Walsheim-Regular-Trial.woff2);
+}
+
+body{
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+    font-family: Walshiem;
+    background-color: #121212;
+    color: #E1E1E1;
+}
+
+nav {
+    overflow: hidden;
+}
+
+nav .active, .dropdown #active {
+    color: white;
+}
+
+nav a {
+    float: left;
+    font-size: 20px;
+    color: #9E9E9E;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+
+nav a:hover, .dropdown:hover .dropbtn {
+    color: #F7F7F7;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 20px;  
+    border: none;
+    outline: none;
+    color: #9E9E9E;
+    padding: 20px 20px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #9E9E9E;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+  
+.dropdown-content a:hover {
+    background-color: #626262;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+footer {
+    text-align: right;
+}
+
+#logo {
+    width: 60px;
+    float: left;
+    padding-right: 15px;
+}
+
+table, th, td{
+    text-align: left;
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+table tr:nth-child(even){
+    background-color: #7E7E7E;
+}
+
+table tr:nth-child(odd){
+    background-color: #626262;
+}
+
+table th {
+    background-color: #3B3B3B;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>3D Printing</title>
+    <link rel="stylesheet" href="mystyle.css" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <nav>
+        <img src="images/vectoreagle.png" id="logo" alt="logo"/>
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tools</a>
+            <div class="dropdown">
+                <button class="dropbtn" id="active">Projects</button>
+                <div class="dropdown-content">
+                  <a href="web.html">Website Development</a>
+                  <a href="graphics.html">Computer Graphics</a>
+                  <a href="cad.html">CAD</a>
+                  <a href="print.html" id="active">3D Printing</a>
+                  <a href="lasercutting.html">Laser Cutting</a>
+                  <a href="arduino.html">Arduino</a>
+                </div>
+            </div>
+        <a href="finalproject.html">Final Project</a>
+        <a href="about.html">About</a>
+    </nav>
+    <header>
+        <hr/>    
+        <h1>3D Printing</h1>
+    </header>
+    <div>
+        <h2>What is 3D Printing?</h2>
+        <p>3D Printing or additive manufacturing is a process of making three dimensional solid objects from a digital file. The creation of a 3D object is achieved by using the additive process where an object is created by laying down sucessive layer of material until the object has been fully 3D printed.</p>
+        <h3>Knight Chess Piece</h3>
+        <p>I will first design a Knight Chess Piece by using a template I found online.</p>
+        <img src="images/chess.jpeg" height="480px" alt="Knight Chess Piece template"/>
+        <iframe src="https://ichat667.autodesk360.com/shares/public/SH56a43QTfd62c1cd968da9f8951ad3e31e7?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+        <h4>Ultimaker Cura</h4>
+        <p>In order to 3D print, the file needs to be exported in .STL format where I will then open the file in a software called Ultimaker Cura to slice the file.</p>
+        <img src="images/slice.png" height="480px" alt="Knight Chess Piece slice in Ultimaker Cura"/>
+        <h4>Machine and Printing Setting</h4>
+        <p>I will be using the Ultimaker 2+ to print my Knight Chess Piece with the following settings documented below.</p>
+        <img src="images/ultimaker.png" width="480px" alt="ultimaker 2+"/>
+        <p>Settings</p>
+        <table>
+            <tr>
+                <td><p>Printer</p></td>
+                <td><p>Ultimaker 2+</p></td>
+            </tr>
+            <tr>
+                <td><p>Material</p></td>
+                <td><p>White PLA</p></td>
+            </tr>
+            <tr>
+                <td><p>Nozzle</p></td>
+                <td><p>0.4mm</p></td>
+            </tr>
+            <tr>
+                <td><p>Layer Height</p></td>
+                <td><p>0.2mm</p></td>
+            </tr>
+            <tr>
+                <td><p>Wall Thickness</p></td>
+                <td><p>0.8mm (4x)</p></td>
+            </tr>
+            <tr>
+                <td><p>Infill</p></td>
+                <td><p>10%</p></td>
+            </tr>
+            <tr>
+                <td><p>Print Speed</p></td>
+                <td><p>80m/s</p></td>
+            </tr>
+            <tr>
+                <td><p>Temperature</p></td>
+                <td><p>190&#8451;-205&#8451;</p></td>
+            </tr>
+            <tr>
+                <td><p>Support</p></td>
+                <td><p>Zig Zag</p></td>
+            </tr>
+            <tr>
+                <td><p>Bed Adhesion</p></td>
+                <td><p>Brim</p></td>
+            </tr>
+        </table>
+        <h4>First Print</h4>
+        <p>For my first initial print I forgot to turn on support which resulted in a bad print.</p>
+        <img src="images/chess1a.jpg" width="480px" alt="First print in 3D printer"/>
+        <img src="images/chess1b.jpg" width="480px" alt="Close up on first print"/>
+        <h4>Second Print</h4>
+        <p>Learning from my mistake on the first print, I subsequently printed a second chess piece with support on.</p>
+        <img src="images/chess2a.jpg" width="480px" alt="Second print in 3D printer"/>
+        <img src="images/chess2b.jpg" width="480px" alt="Close up on second print"/>
+        <p>This concludes my first 3D Printing project in this elective and I have learned how to turn my 3D models from Autodesk Fusion into 3D Printed models.</p>
+    </div>
+    <footer>
+        <br>
+      Copyright &copy; 2021 Lee An
+    </footer>
+    </body>
+</html>
