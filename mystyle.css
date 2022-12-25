@@ -20,12 +20,18 @@ nav .active, .dropdown #active {
     color: white;
 }
 
+nav a #logo {
+    width: 30px;
+    height: 30px;
+    float: left;
+}
+
 nav a {
     float: left;
     font-size: 20px;
     color: #9E9E9E;
     text-align: center;
-    padding: 20px 20px;
+    padding:20px;
     text-decoration: none;
 }
 
@@ -77,12 +83,6 @@ nav a:hover, .dropdown:hover .dropbtn {
 
 footer {
     text-align: right;
-}
-
-#logo {
-    width: 60px;
-    float: left;
-    padding-right: 15px;
 }
 
 table, th, td{
