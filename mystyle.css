@@ -101,3 +101,7 @@ table tr:nth-child(odd){
     background-color: #121212;
     border: 1px solid #121212;
 }
+
+a {
+    color:green;
+}
