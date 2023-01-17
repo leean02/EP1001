@@ -41,8 +41,62 @@
             <h1>Electronics Design</h1>
         </header>
         <div>
-
+            <h2>Designing PCBs</h2>
+            <p>Continuing on from <a href="electprod.html">Electronic Production</a>, we will now learn how to take an idea and turn it from a schematic design to an actual PCB.</p>
+            <h3>What is an echo hello-world board?</h3>
+            <p>An echo hello-world board gets its name from the "Hello world" program which is the first program that people write when first learning a new progamming language. Similarly, the echo hello-world board acts as the first board we will design when making our first programmable board. We will be using the ATtiny412 microccontroller for this project.</p>
+            <img src="images/examplehello.JPG" width="100%" alt="Example of an echo hello-world board" />
+            <h3>Assignments</h3>
+            <ul>
+                <li>Redraw an echo hello-world board</li>
+                <ul>
+                    <li>To add at least a button and an LED with current limitng resistor.</li>
+                    <li>Check the design rules: Electrical Rule Checking (ERC) and Design Rule Checking (DRC).</li>
+                    <li>Make it and test it.</li>
+                </ul>
+            </ul>
+            <h3>Setting up Autodesk Fusion 360</h3>
+            <ol>
+                <li>Download the <a href="https://gitlab.fabcloud.org/pub/libraries/electronics/eagle/-/blob/master/fab.lbr">fab library</a> to have access to the ATtiny412 microccontroller schematic component.</li>
+                <li>Under files in the top left corner, open "New Electronics Design".</li>
+                <img src="images/newelectdesign.jpg" width="100%" alt="new electronic design"/>
+                <li>Open "New Schematic" in the top left corner then under the "PLACE COMPONENTS" tab there is an "Open Library Manager". From there, click on "Import libraries" then "Import from local disk" and import in the <a href="https://gitlab.fabcloud.org/pub/libraries/electronics/eagle/-/blob/master/fab.lbr">fab library</a> downloaded from step 1.</li>
+                <li>Finally enable the fab library.</li>
+            </ol>
+            <p>I will be referring to this schematic to redraw my echo hello-world board.</p>
+            <img src="images/t412schematic.png" width="100%" alt="t412 schematic"/>
+            <p>After placing the components with reference to schematic above along with the additional button, LED and current limiting resistor, we will press ERC under the VALIDATE tab to check for any errors with our schematic design. After we complete our new schematic design, it should look a little something like this :</p>
+            <img src="images/myt412schematic.jpg" width="100%" alt="my completed schematic design"/>
+            <p>After completing our schematic design, its time to generate our board. On the top left, we will click "Switch to PCB document". Upon first loading in, the components will all be on the side.</p>
+            <img src="images/firstloadin.png" width="100%" alt="first load in"/>
+            <p>We will first start with setting up our DRC under the "RULES DRC/ERC" tab. We will adjust the "Clearance" and "Sizes".</p>
+          <table id="clear">
+            <td style="width:50%"><img src="images/clearence.png" width="100%" alt="DRC clearance"></td>
+            <td><img src="images/size.png" width="100%" alt="DRC size"></td>
+          </table>
+          <p>With the help of the yellow guide line, organise and layout your board component. Switch the layer to 46 Milling and add an outline around the PCB. When completed it should look something like this.</p>
+          <img src="images/helloboardschematic.jpg" width="100%" alt="hello world schematic"/>
+          <p>After which, using the command "export image monochrome Users/(Username)/Downloads/(filename).png 2000" in the command box to export layers 1 Top & 17 Pads as well as 46 Milling respectively, we will get two images that looks like this:</p>
+          <table id="clear">
+            <td style="width:50%"><img src="images/hello1.png" width="100%" alt="Export hello traces"></td>
+            <td><img src="images/hello.png" width="100%" alt="Export hello outline"></td>
+          </table>
+          <h4>note: command line syntax is for mac, for windows it will be different.</h4>
+          <p>We will now need to use <a href="graphics.html">GIMP</a> to fill in spaces in the pads as well in the outline.</p>
+          <table id="clear">
+            <td style="width:50%"><img src="images/hellotraces.png" width="100%" alt="Hello traces"></td>
+            <td><img src="images/hellooutline.png" width="100%" alt="Hello outline"></td>
+          </table>
         </div>
+        <p>When completed it should look like this and it is ready to be inserted into mods learned in <a href="electprod.html#mods">Electronics Production</a>. When we are done milling out the traces, we will find that the copper tracks will have a lot of burr sticking out. We will need to clean this up to prevent the PCB from shorting itself. We do this by sanding down the surface after we finish milling out the outline as well.</p>
+        <table id="clear">
+            <td style="width:50%"><img src="images/coppertraces.jpg" width="100%" alt="burr on copper traces"></td>
+            <td><img src="images/freshhelloboard.jpg" width="100%" alt="cleaned up hello board PCB"></td>
+        </table>
+        <p>When completed with soldering, the PCB should look something like this:</p>
+        <img src="images/completedhelloboard.jpg"/>
+        <h4>note: the LED's negtaive terminal is the side with the green tip and the resistor is read as the first 3 value multiplied by 10 to the power of the 4th value (eg. 1001 = 100 x 10^1 = 1000).</h4>
+        <p>The testing of the board will be explored further in <a href="embedprog.html">Embedded Programming</a> where we will program the board to do something.</p>
         <footer>
             <br>
           Copyright &copy; 2023 Lee An
