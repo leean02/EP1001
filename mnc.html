@@ -40,7 +40,43 @@
             <h1>Molding & Casting</h1>
         </header>
         <div>
-
+            <h2>What is molding and casting?</h2>
+            <p>Molding is the process of manufacturing by shaping liquid or pliable raw material using a rigid frame called a mold or matrix. This itself may have been made using a pattern or model of the final object. The liquid hardens or sets inside the mold, adopting its shape. A mold or mould is a hollowed-out block that is filled with a liquid or pliable material such as plastic, glass, metal, or ceramic raw material. A mold is the counterpart to a cast.<br><br>Casting is a manufacturing process in which a liquid material is usually poured into amold, which contains a hollow cavity of the desired shape, and then allowed to solidify. The solidified part is also known as a casting, which is ejected or broken out of the mold to complete the process.</p>
+            <img src="images/allmold.jpg" width="100%" alt="molding example"/>
+            <h3>Assignments</h3>
+            <ul>
+                <li>Review the safety data sheets for each of your molding and casting materials.</li>
+                <li>Design a mold around the stock and tooling that you will be using.</li>
+                <li>Mill it (rough cut & three-axis finish cut) and use it to cast parts.</li>
+            </ul>
+            <p>There were 2 foam thickness provided to us to carry out our assignment; 25mm and 50mm. It is important to keep in mind that there has to be at least 4mm to 5mm of allowance for the base. With the design parameter in mind, we can begin designing our mold.</p>
+            <iframe src="https://ichat667.autodesk360.com/shares/public/SH9285eQTcf875d3c539d36b7ead29e7d766?mode=embed" width="auto" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"></iframe>
+            <p>After completing our mold design, we can begin generating our tool path.</p>
+            <ol>
+                <li>Switch from "DESIGN" to "MANUFACTURE" on the top left.</li>
+                <li>Create a new "Setup".</li>
+                <li>Select a toolpath algorithm (ie. "Adaptive Clearing") then double click the toolpath algorithm tab to select the tool.</li>
+                <ul>
+                    <li>note: you may need to right click on the "Fusion 360 Library" tab to "Turn all libraries on".</li>
+                </ul>
+                <li>Select "Milling Tools (Metric)" and select the respective Flat Endmill we need (ie. 3mm for roughing and 2mm for finishing).</li>
+                <li>Select on the edit tool then select the "Cutter" tab to change the properties of the tool.</li>
+                <ul>
+                    <li>note: most importantly, the "Length below holder" and "Shoulder length" has to be larger than the thickness of the stock foam or the deepest cut pass in your design.</li>
+                </ul>
+                <li>On the right floating window, under "Tool" tab, disable coolant, set spindle speed at 12000 rpm and set cutting feedrate as 1200mm/min.</li>
+                <li>Under "Geometry" tab, turn on "Stock Contours" and set it as necessary (typically the deepest cut pass). For roughing, turn off "Rest Machiing" and turn it on for finishing.</li>
+                <li>Under "Passes" tab, for roughing, turn on "Stock to Leave" and turn it off for finishing.</li>
+                <li>After generating your toolpath, right click on the toolpath algorithm tab and "Simulate" to do a sanity check.</li>
+                <li>When completed, right click on the toolpath algorithm tab again and click "Post Process". Under "Post", click on "Select post from the library" and click on "Import" to select the Stepcraft-UCCNC post processor library. Finally, press "Post".</li>
+                <ul>
+                    <li>note: it is important to download the <a href="https://cam.autodesk.com/posts/download.php?name=stepcraft%20uccnc&type=post">Stepcraft-UCCNC post processor</a> for this step.</li>
+                </ul>
+                <li>From what we learned in <a href="electprod.html">Electronics Production</a> we can now cut out the foam. Draw two lines from the corner of each stock to find the zero point as the center.</li>
+            </ol>
+            <img src="images/foamcross.jpg" width="100%" alt="zeroing stock foam"/>
+            <p>When completed, the foam piece should look like this.</p>
+            <img src="" width="100%" alt="completed foam piece"/>
         </div>
         <footer>
             <br>
