@@ -40,8 +40,34 @@
             <h1>Embedded Programming</h1>
         </header>
         <div>
-
+            <h2>Continuation from Electronics Design</h2>
+            <p>We will explore how to program the echo hello-world board here and continue where we left off in <a href="electdesign.html">Electronics Design</a>.</p>
+            <h3>Assignments</h3>
+            <ul>
+                <li>To read a microcontoller data sheet.</li>
+                <li>Program your board to do something with as many different programming langauges and programming environments as possible.</li>
+            </ul>
+            <p>Before we can begin testing our board, we will need to download some additional boards manager.</p>
+            <ol>
+                <li>Open up Arduino IDE and go to Settings. Under the "Settings" tab, go down to "Additional boards manager URLs:" and key in : http://drazzy.com/package_drazzy.com_index.json</li>
+                <li>Under "Tools", go to "Board" then "megaTinyCore" and select "ATtiny412/402/212/202".</li>
+            </ol>
+            <img src="images/boardmanager.png" width="100%" alt="steps to setting up the board manager"/>
+            <p>Next, we will check and label our UPDI and echo hello-world board. This is to ensure we do not incorrectly connect the two boards together potentially damaging our board or even our computers.</p>
+            <img src="images/labelboard.jpg" width="100%" alt="Labelling UPDI and hello-world board"/>
+            <p>Now we will burn a new bootloader for the board. All the settings will be done under the "Tools" tab.</p>
+            <ol>
+                <li>Go down to "Programmer:" and select "SerialUPDI - SLOW: 57600 baud".</li>
+                <li>We will go to clock and select "8 Mhz internal".</li>
+                <li>Finally, we will select "Burn Bootloader".</li>
+            </ol>
         </div>
+        <p>Following the image below, we can now program our echo hello-world board LED to blink every other second. This will be our way of testing the board.</p>
+        <img src="images/helloboardprgram.JPG" width="100%" alt="testing hello world board programme"/>
+        <p>I had initially experienced a lot of issues getting my board to work and went through a lot of troubleshooting. This included hours of resoldering, multimeter testing and rereading schematics to ensure everything was correctly connected. However, at last with the help of my lecturer, he found out that the reason was simply that the version of Arduino I was using required me to use "Upload Using Programmer" instead of the standard "Upload".</p>
+        <img src="images/epicfail.jpg" width="100%" alt="hello world board not working"/>
+        <p>After testing that our board works, the assignment calls for us to program our board to do something so we will write a simple programme that uses our button.</p>
+        <img src="images/simpleprogram.jpg" width="100%" alt="simple programme"/>
         <footer>
             <br>
           Copyright &copy; 2023 Lee An
