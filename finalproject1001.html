@@ -38,10 +38,63 @@
         <header>
             <hr/>    
             <h1>EP1001 Final Project</h1>
-            <iframe src="https://ichat667.autodesk360.com/shares/public/SH9285eQTcf875d3c53951186f53b4aa098e?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
         </header>
         <div>
-
+            <h2>VESA Laptop Holder</h2>
+            <p>I will be documenting the process of making my EP1001 final project here. The raw files can be found below as I go through what I have done and learned along the way.</p>
+            <h3>CDIO Framework</h3>
+            <p>I will be following the same structure of documenting as I have had done in my <a href="finalproject.html#CDIO">EP1000 Final Project</a>.</p>
+            <h3>Conceive</h3>
+            <p>I want to be able to elevate my laptop of the table for namely a few reasons:</p>
+            <ul>
+                <li>To save precious table space and make cleaning the table a little less fussy.</li>
+                <li>To have the laptop display be elevated and off to the side of my main monitor. This would make it so that it strains my neck lesser as compared if the laptop was placed just on top of the table.</li>
+            </ul>
+            <p>I had previously attempted to make a laptop stand with the VESA mount holes on the base of the stand so as to be able to attach to my monitor arm. This however was a very bad solution as not only did the base of laptop stand get in the way of the monitor arm movement, it also was made from 3 layers of lasercut plywood held together by glue; which is not very structurly well built. Hence since I had the opportunity to learn 2D flatbed CNC during my time in EP1001, I decided to work on this project of mine again.</p>
+            <img src="images/shitstand.jpg" width="100%" alt="Laptop stand with VESA mount holes"/>
+            <h3>Design</h3>
+            <p>As part of the EP1001 final project requirements, which are to include:</p>
+            <ul>
+                <li>2D and/or 3D designed part(s)</li>
+                <li>subtractive manufacturing part (cnc)</li>
+                <li>may include:
+                    <ul>
+                        <li>molded or cast part(s)</li>
+                        <li>3d printed part(s)</li>
+                        <li>laser cut part(s)</li>
+                    </ul>
+                </li>
+                <li>an embedded microcontroller that I designed & fabricated</li>
+                <li>input and/or output device(s) that interacts with user</li>
+                <li>embedded program</li>
+            </ul>
+            <p>I decided to have it such that the laptop holder will have other functionality as well. This includes:</p>
+            <ul>
+                <li>Be able to connect to a VESA monitor arm and not restrict the monitor arm movement.</li>
+                <li>Have a cooling fan that can automatically turn on when it detect that there is laptop placed on the laptop holder and reaches a certain temperature threshold.</li>
+                <li>Have a master switch to override the automatic functionality in situation when I do not want the fan to be on.</li>
+            </ul>
+            <table id="clear">
+                <tr>
+                    <td style="width:50%"><img src="images/brainstorm1.jpg" width="100%" alt="First brainstorm"/></td>
+                    <td><img src="images/brainstorm2.jpg" width="100%" alt="Second brainstorm"/></td>
+                </tr>
+            </table>
+            <p>To solve the detection of the laptop on the holder, I decided to use a Light Dependent Resistor(LDR). For temperature sensing, I decided to use the LM35 Temperature Sensor. I also decided to include an LED so that I can have it turn on when the master switch is turned on so I will know when the automatic functionality in operating. With this, I came up with the design:</p>
+            <iframe src="https://ichat667.autodesk360.com/shares/public/SH9285eQTcf875d3c53951186f53b4aa098e?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+            <p>I then designed the PCB using the atTiny412 as I only had 3 inputs and 2 outputs which would allow me to fully populate all of the microcontroller pins. I needed to include a voltage regulator (AMS1117) to step the power down from the 12 volts input to 5 volts for the microcontroller and the sensors. I needed the 12 volts input as the fan needed 12 volts to operate. I also needed an amosfet (AO3400) to toggle the fan on and off.</p>
+            <table id="clear">
+                <tr>
+                    <td style="width:50%"><img src="images/schematicfinalproj.jpeg" width="100%" alt="Schematic"/></td>
+                    <td><img src="images/pcbfinalproj.jpeg" width="100%" alt="PCB Design"/></td>
+                </tr>
+            </table>
+            <p>The coding was pretty straightforward and I learned how to write out my program along the way when I was testing my board and the different components. I only had to awkwardly use a multimeter to measure the voltage across the LDR when my laptop was on the holder.</p>
+            <h3>Takeaway</h3>
+            <p>I learned a great deal while embarking on this project. I met a lot of unexpected setbacks and hurdles which made what I thought was a simple project to become a really difficult and time consuming one. One of the first mistake I learned very quickly on was project planning. When I was modelling my laptop holder, I had initially set the wood cnc material thickness to 18mm. Without proper hindsight and experience, I went ahead to laser cut out my acrylic grill and cover not knowing that when I had to later adjust my material thickness dimension to 24.5mm thick, it would result in my original laser cut pieces not fitting correctly. This happened because I tried to do my work ahead of time and failed to realise the effect it would have and with proper project planning, I might have been able to see this ahead of time. Secondly, I learned ways to fit the laser cut pieces to the cnc pieces better. I had initially designed it to fit like a puzzle pieces similar to what I had learn in my <a href="lasercutting.html#musicbox">Music Box</a> project. However, I learned that the cnc could not drill out the small pockets very well but the piece that was fitted in through the slot fitted in very well. I also made a very careless mistake when cnc my part and failed to mark out the parts of the board that were unusable, this resulted in one of my piece having a weird aesthetic defect from the underside of the board having been cut before.</p>
+            <img src="images/funnycnc.jpg" width="100%" alt="Stupid cnc mistake"/>
+            <p>Due to time contrain, I was unable to recut my board and had to leave it be. I had another classmate who had not started cncing his pieces and I did not want to hog up the machine when it was my on oversight that made this mistake. Thirdly, during my PCB design, I failed to realise that the AMS1117 footprint I used was incorrect and this was due to me being inexperiences. I did not realise that there were more than one footprint for the same chip. This resulted in me having to solder my AMS1117 in a way that it would not short itself. Finally, I learned that surface mounted soldering was a lot easier if I were to first tin the pad with solder and use a hot gun and place the components on top of the pads with melted solder. If I had learned this earlier, I would have made lesser mistake which would have prevented me from burning off the copper on the board. It did not help that I dropped the board and 2 of the pin broke off with the copper pad. I had to essentially do a lot of "surgery" and troubleshooting on a what could have been a 30 minutes job. (You may be wondering why I did not just recut a new PCB and that was because we were running out of component and I was in a time crunch to complete everything. Additionally, the problems happened one after and not all at once so it would not have made a lot of sense to completely redo after experiencing one or two problems.) At least now through this project and the many problems I faced, I am now equipped with the experience and knowledge to help me fabricate these parts again quicker and more efficiently. I also made a revision design model base on what I have learned during the fabrication process. It would include a bigger (140mm) fan that can operate on 5V allowing me to skip out on the power regulator completely. It is also designed such that the acrylic cover would slide in instead of being glued on. I hope to be able to make my more polished and better designed laptop holder someday (maybe during my last holiday in SP?)</p>
+            <iframe src="https://ichat667.autodesk360.com/shares/public/SH9285eQTcf875d3c539e4b2ffa2560d9be3?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
         </div>
         <footer>
             <br>
