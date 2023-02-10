@@ -90,6 +90,7 @@
                 </tr>
             </table>
             <p>The coding was pretty straightforward and I learned how to write out my program along the way when I was testing my board and the different components. I only had to awkwardly use a multimeter to measure the voltage across the LDR when my laptop was on the holder.</p>
+            <img src="images/" width="100%" alt="arduino code"/>
             <h3>Implement</h3>
             <p>Now comes the implement stage where I digitally fabricate my ideas to life.</p>
             <table id="clear">
@@ -98,6 +99,10 @@
                     <td><img src="images/3dprintfinalproj.jpg" width="100%" alt="3D printed VESA adapter"/></td>
                 </tr>
             </table>
+            <p>On top of cnc manufacturing out my pieces as well as 3D printing my adapter to connect the laptop holder to the monitor arm, I also laser cut out the grills, cover and milled out my PCB. While milling out my PCB outline, the copper board came loose and I had to just saw the outline of the board instead.</p>
+            <img src="images/failedoutline.jpg" width="100%" alt="failed outline milling"/>
+            <p>I also experienced many problems while soldering my PCB which resulted in it having gone through many "surgeries". Ultimately however, I got it all to eventually work.</p>
+            <img srx="images/" width="100%" alt="pcb post surgery"/>
             <h3>Operate</h3>
             <p>As mentioned on top, this new laptop holder was designed to replace my laptop stand. Hence when used as a laptop stand, it put my laptop up in a very similar position as it previously did.</p>
             <img src="images/notshitstand.jpg" width="100%" alt="new laptop holder replacing old laptop stand"/>
@@ -113,6 +118,18 @@
             <img src="images/funnycnc.jpg" width="100%" alt="Stupid cnc mistake"/>
             <p>Due to time contrain, I was unable to recut my board and had to leave it be. I had another classmate who had not started cncing his pieces and I did not want to hog up the machine when it was my on oversight that made this mistake. Thirdly, during my PCB design, I failed to realise that the AMS1117 footprint I used was incorrect and this was due to me being inexperiences. I did not realise that there were more than one footprint for the same chip. This resulted in me having to solder my AMS1117 in a way that it would not short itself. Finally, I learned that surface mounted soldering was a lot easier if I were to first tin the pad with solder and use a hot gun and place the components on top of the pads with melted solder. If I had learned this earlier, I would have made lesser mistake which would have prevented me from burning off the copper on the board. It did not help that I dropped the board and 2 of the pin broke off with the copper pad. I had to essentially do a lot of "surgery" and troubleshooting on a what could have been a 30 minutes job. (You may be wondering why I did not just recut a new PCB and that was because we were running out of component and I was in a time crunch to complete everything. Additionally, the problems happened one after and not all at once so it would not have made a lot of sense to completely redo after experiencing one or two problems.) At least now through this project and the many problems I faced, I am now equipped with the experience and knowledge to help me fabricate these parts again quicker and more efficiently. I also made a revision design model base on what I have learned during the fabrication process. It would include a bigger (140mm) fan that can operate on 5V allowing me to skip out on the power regulator completely. It is also designed such that the acrylic cover would slide in instead of being glued on. I hope to be able to make my more polished and better designed laptop holder someday (maybe during my last holiday in SP?).</p>
             <iframe src="https://ichat667.autodesk360.com/shares/public/SH9285eQTcf875d3c539e4b2ffa2560d9be3?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+            <h4>RAW Files</h4>
+            <p>You can find all my RAW files <a href="https://drive.google.com/drive/folders/1hBhrvxVLl02w2lI-Z7Pr3ZnrdNgBD-LT?usp=sharing">here</a>:</p>
+            <ul>
+                <li><a href="https://drive.google.com/drive/folders/1fIKqqoujJgKtot_kunKqCbgWHEsuyn2d?usp=sharing"></a>3D Model</li>
+                <li><a href="https://drive.google.com/drive/folders/1tCKl-7_DleY2nRur2OHZyn1-88zWm66O?usp=sharing"></a>3D Print Holder</li>
+                <li><a href="https://drive.google.com/drive/folders/1FZY2KOlZg2OpWLbi-uE0emnRiyEE3XbJ?usp=sharing"></a>CNC DXF</li>
+                <li><a href="https://drive.google.com/drive/folders/1UKKbflxr2I_8_N8ag_0j71ptIEjD7FSt?usp=sharing"></a>Lasercut DXF</li>
+                <li><a href="https://drive.google.com/drive/folders/13tVdL-qzT35OBZee4DzDCud3eCPXXDim?usp=sharing"></a>PCB Fusion Eagle</li>
+                <li><a href="https://drive.google.com/drive/folders/1aW9wQto-ZWwYSQvqTnEriyzDWaMyKB6R?usp=sharing"></a>PCB png</li>
+                <li><a href="https://drive.google.com/drive/folders/196Gl8XW1sRSUMg3q1AekSdmdSrm0HbYG?usp=sharing"></a>PCB gcode</li>
+                <li><a href="https://drive.google.com/drive/folders/1gBy2cbpC-zDvVF7tuA0tKR00rsUEj51n?usp=sharing"></a>Arduino code</li>
+            </ul>
         </div>
         <footer>
             <br>
