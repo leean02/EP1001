@@ -45,10 +45,10 @@
             <h3>CDIO Framework</h3>
             <p>I will be following the same structure of documentation as I have done in my <a href="finalproject.html#CDIO">EP1000 Final Project</a>.</p>
             <h3>Conceive</h3>
-            <p>I want to be able to mount my laptop onto the monitor arm for namely a few reasons:</p>
+            <p>I want to be able to mount my laptop onto a monitor arm for namely a few reasons:</p>
             <ul>
                 <li>To save precious table space and make cleaning the table a little less fussy.</li>
-                <li>To have the laptop display be elevated and off to the side of my main monitor. This would make it so that it will not strain my neck as much as compared to if the laptop was just placed on the table.</li>
+                <li>To have the laptop display be elevated and off to the side of my main monitor. This would make it more ergonomic especially when working for long hours.</li>
             </ul>
             <p>I had previously attempted to make a laptop stand with the VESA mount holes on the base of the stand so as to be able to attach it to my monitor arm. This however was a bad solution as not only did the base of laptop stand get in the way of the monitor arm movement, it was also made from 3 layers of lasercut plywood held together by glue; which is not very structuraly strong. Hence since I had the opportunity to learn 2D flatbed CNC in EP1001, I decided to work on this project of mine again.</p>
             <img src="images/shitstand.jpg" width="100%" alt="Laptop stand with VESA mount holes"/>
@@ -82,15 +82,21 @@
             </table>
             <p>To solve the detection of the laptop on the holder, I decided to use a Light Dependent Resistor(LDR). For temperature sensing, I decided to use the LM35 Temperature Sensor. I also decided to include an LED so that I can have it turn on when the master switch is turned on so I will know when the automatic functionality in operating. With this, I came up with the design:</p>
             <iframe src="https://ichat667.autodesk360.com/shares/public/SH9285eQTcf875d3c53951186f53b4aa098e?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
-            <p>I then designed the PCB using the Tiny412 as I only had 3 inputs and 2 outputs which would allow me to fully populate all of the microcontroller pins. I needed to include a voltage regulator (AMS1117) to step the power down from the 12 volts input to 5 volts for the microcontroller and the sensors. I needed the 12 volts input as the fan needed 12 volts to operate. I also needed an amosfet (AO3400) to toggle the fan on and off.</p>
+            <p>I then designed the PCB using the ATtiny412 as I only had 3 inputs and 2 outputs which would allow me to fully populate all of the microcontroller pins. I needed to include a voltage regulator (AMS1117) to step the power down from the 12 volts input to 5 volts for the microcontroller and the sensors. I needed the 12 volts input as the fan needed 12 volts to operate. I also needed an amosfet (AO3400) to toggle the fan on and off.</p>
             <table id="clear">
                 <tr>
                     <td style="width:50%"><img src="images/schematicfinalproj.jpeg" width="100%" alt="Schematic"/></td>
                     <td><img src="images/pcbfinalproj.jpeg" width="100%" alt="PCB Design"/></td>
                 </tr>
             </table>
-            <p>The coding was pretty straightforward and I learned how to write out my program along the way when I was testing my board and the different components. I only had to awkwardly use a multimeter to measure the voltage across the LDR when my laptop was on the holder.</p>
-            <img src="images/arduinocode.jpeg" width="100%" alt="arduino code"/>
+            <p>I had initially used an Arudino Uno to see the analog read out of the sensors. However when my project was still not working and Mr Steven had helped me checked that my code was written correctly, he helped me by using his own ATtiny412 programmable board to get the analog read out to see if there were any difference. Ultimately, I just trailed and error the sensors treshold in my code until my fan was triggered in the expected working conditions.</p>
+            <table id="clear">
+                <tr>
+                    <td style="width:50%"><img src="images/readinganalog.jpg" width="100%" alt="reading analog output"></td>
+                    <td><img src="images/arduinocode.jpeg" width="100%" alt="arduino code"/></td>
+                </tr>
+            </table>
+            
             <h3>Implement</h3>
             <p>Now comes the implement stage where I digitally fabricate my ideas to life.</p>
             <table id="clear">
@@ -99,10 +105,20 @@
                     <td><img src="images/3dprintfinalproj.jpg" width="100%" alt="3D printed VESA adapter"/></td>
                 </tr>
             </table>
-            <p>On top of cnc manufacturing my pieces and 3D printing my adapter, I also laser cut out the grills and cover as well as milled out my PCB. While milling out my PCB outline, the copper board came loose and I had to just saw the outline of the board instead.</p>
-            <img src="images/failedoutline.jpg" width="100%" alt="failed outline milling"/>
-            <p>I also experienced many problems while soldering my PCB which resulted in it having to go through many "surgeries". Ultimately however, I got all of it to work.</p>
-            <img src="images/pcbsurgery.jpg" width="100%" alt="pcb post surgery"/>
+            <p>On top of cnc manufacturing my pieces and 3D printing my adapter, I also laser cut out the grills and cover as well as milled out my PCB. While milling out my first PCB outline, the copper board came loose and I had to saw the outline of the board instead. I also experienced many problems while soldering my PCB which resulted in it having to go through many "surgeries". Ultimately however, I had to redo my board entirely.</p>
+            <table id="clear">
+                <tr>
+                    <td style="width:50%"><img src="images/failedoutline.jpg" width="100%" alt="failed outline milling"/></td>
+                    <td><img src="images/pcbsurgery.jpg" width="100%" alt="pcb post surgery"/></td>
+                </tr>
+            </table>
+            <p>As I did not have enough time to redesign my board, I had decided to just cut out a track in the old design which was one of the reasons why the board was not initially working and solder a wire to the two tracks again.</p>
+            <table id="clear">
+                <tr>
+                    <td style="width:50%"><img src="images/finalprojpcb.jpg" width="100%" alt="second pcb board"></td>
+                    <td><img src="images/completedfinalprojpcb.jpg" width="100%" alt="completed final project pcb"></td>
+                </tr>
+            </table>
             <h3>Operate</h3>
             <p>As mentioned on top, this new laptop holder was designed to replace my laptop stand. Hence when used as a laptop stand, it put my laptop up in a very similar position as my previous laptop stand did.</p>
             <img src="images/notshitstand.jpg" width="100%" alt="new laptop holder replacing old laptop stand"/>
@@ -114,10 +130,145 @@
                 </tr>
             </table>
             <h3>Takeaway</h3>
-            <p>I learned a great deal while embarking on this project. I met a lot of unexpected setbacks and hurdles which made what I thought was a simple project to become a really difficult and time consuming one. One of the first mistake I learned very quickly on was project planning. When I was modelling my laptop holder, I had initially set the wood cnc material thickness to be 18mm. With poor hindsight and lack of experience, I went ahead to laser cut out my acrylic grill and cover not knowing that when I had to later adjust my material thickness dimension to 24.5mm, it would result in my original laser cut pieces not fitting correctly. This happened because I lacked proper planning and tried to rush and do my work ahead of time. Secondly, I learned a better way to fit the laser cut pieces to the cnc pieces better. I had initially designed it to fit like a puzzle piece, similar to what I had learn in my <a href="lasercutting.html#musicbox">Music Box</a> project. However, I learned that the cnc could not mill out the small pockets very well but the piece that was fitted in through the slot fitted in very well. I also made a very careless mistake when manufacturing my part. I failed to mark out the parts of the board that were unusable which resulted in one of my piece having a weird aesthetic defect as the underside of the board had been cut before.</p>
+            <p>I learned a great deal while embarking on this project. I met a lot of unexpected setbacks and hurdles which made what I thought was a relatively simple project to become a really difficult and time consuming one. One of the first mistake I learned very quickly on was project planning. When I was modelling my laptop holder, I had initially set the wood cnc material thickness to be 18mm. With poor hindsight and lack of experience, I went ahead to laser cut out my acrylic grill and cover not knowing that when I had to later adjust my material thickness dimension to 24.5mm, it would result in my original laser cut pieces not fitting correctly. This happened because I lacked proper planning and tried to rush and do my work ahead of time. Secondly, I learned a better way to fit the laser cut pieces to the cnc pieces better. I had initially designed it to fit like a puzzle piece, similar to what I had learn in my <a href="lasercutting.html#musicbox">Music Box</a> project. However, I learned that the cnc could not mill out the small pockets very well but the piece that was fitted in through the slot fitted in very well. I also made a very careless mistake when manufacturing my part. I failed to mark out the parts of the board that were unusable which resulted in one of my piece having a weird aesthetic defect as the underside of the board had been cut before.</p>
             <img src="images/funnycnc.jpg" width="100%" alt="Stupid cnc mistake"/>
-            <p>Due to time contrain, I was unable to recut my board and had to leave it be. I had another classmate who had not started manufacturing his pieces and I did not want to hog up the machine when it was my own oversight that made this mistake. Thirdly, during my PCB design, I failed to realise that the AMS1117 footprint I used was incorrect and this was due to me not checking the component data sheet. I did not realise that there were more than one footprint for the same chip. This caused me to awkwardly solder my AMS1117 in a way that it would not short itself. Addtionally, I made a mistake to not connect my fan to one of the Pulse Width Modulation (PWM) pin. I had originally wanted to fan to slowly spin up depending on the temperature read out however as I was unfamiliar with what I was doing, I ended up connecting the fan to a pin without PWM. Finally, I learned that surface mounted soldering was a lot easier if I were to first tin the pad with solder and then use a hot gun to place the components instead. If I had learned this earlier, I would have made lesser mistake which would have prevented me from burning off the copper on the board. It did not help that I dropped the board and 2 of the pin broke off along with the copper pad. I had to do a lot of "surgery" and troubleshooting on a what could have been a 30 minutes job. (You may be wondering why I did not just recut a new PCB and that was because we were running out of component and I was in a time crunch to complete everything. Additionally, the problems happened one after so I was being stubborn that I could fix the problem when it was happening.) At least now through this project and the many problems I faced, I am now equipped with the experience and knowledge to help me fabricate these parts again quicker and more efficiently. I also made a revision design model base on what I have learned during the fabrication process. It would include a bigger (140mm) fan that can operate on 5V allowing me to skip out on the power regulator completely. It is also designed such that the acrylic cover would slide in instead of being glued on. I hope to be able to make this better and updated designed someday (maybe during my last holiday in SP?).</p>
+            <p>Due to time contrain, I was unable to recut my board and had to leave it be. I had another classmate who had not started manufacturing his pieces and I did not want to hog up the machine when it was my own oversight that made this mistake. Thirdly, during my PCB design, I failed to realise that the AMS1117 footprint I used was incorrect and this was due to me not checking the component data sheet. I did not realise that there were more than one footprint for the same chip. This caused me to burn my AMS1117 and board many times as it had short itself. Addtionally, I made a mistake to not connect my fan to one of the Pulse Width Modulation (PWM) pin. I had originally wanted to fan to slowly spin up depending on the temperature read out however as I was unfamiliar with what I was doing, I ended up connecting the fan to a pin without PWM. Finally, I learned that surface mounted soldering was a lot easier if I were to first tin the pad with solder and then use a hot gun to place the components instead. If I had learned this earlier, I would have made lesser mistake which would have prevented me from burning off the copper on the board. I had to do a lot of "surgery" and troubleshooting on a what could have been a 30 minutes job. I was also having erroneous input of my switch and output of my led and fan. I later learned that my board could have been soldered poorly ( ie. cold joints or poor contact ) resulting in the unresponsive switch or flickering led. This was normally resolved by reflowing the solder by heating up the board again with the heat gun to allow all the solder to melt and cool again. At least now through this project and the many problems I faced, I am now equipped with the experience and knowledge to help me fabricate these parts again quicker and more efficiently. I also made a revision design model base on what I have learned during the fabrication process. It would include a bigger (140mm) fan that can operate on 5V allowing me to skip out on the power regulator completely. It is also designed such that the acrylic cover would slide in instead of being glued on. I hope to be able to make this better and updated designed during my last term holiday in SP.</p>
             <iframe src="https://ichat667.autodesk360.com/shares/public/SH9285eQTcf875d3c539e4b2ffa2560d9be3?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+            <h4>BOM</h4>
+            <table>
+                <tr>
+                    <th style="width:10%"><p>Quantity</p></th>
+                    <th style="width:50%"><p>Description</p></th>
+                    <th><p>Cost</p></th>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>Normal Plywood 25mmx1120mmx1600mm</p></td>
+                    <td><p>SGD 120.05</p></td>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>Clear Acrylic 3mmx300mmx500mm</p></td>
+                    <td><p>SGD 26.99</p></td>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>3D Printing filament</p></td>
+                    <td><p>SGD 19.90/spool</p></td>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>ATtiny412 mircochip</p></td>
+                    <td><p>SGD 0.89</p></td>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>SMD AMS1117 5V Voltage Regulator</p></td>
+                    <td><p>SGD 0.61</p></td>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>SMD NMOSFET AO3400</p></td>
+                    <td><p>SGD 1.62</p></td>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>Switch</p></td>
+                    <td><p>SGD 1.10</p></td>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>SMD LED</p></td>
+                    <td><p>SGD 1.83 for long cut of 50 pieces</p></td>
+                </tr>
+                <tr>
+                    <td><p>3</p></td>
+                    <td><p>SMD 1k Resistor</p></td>
+                    <td><p>SGD 35.90 for 1 long cut tape of resistor</p></td>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>SMD 10k Resistor</p></td>
+                    <td><p>SGD 35.90 for 1 long cut tape of resistor</p></td>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>SMD 1M Resistor</p></td>
+                    <td><p>SGD 35.90 for 1 long cut tape of resistor</p></td>
+                </tr>
+                <tr>
+                    <td><p>2</p></td>
+                    <td><p>SMD Capacitor Unpolarised</p></td>
+                    <td><p>SGD 0.24/Capacitor</p></td>
+                </tr>
+                <tr>
+                    <td><p>1</p></td>
+                    <td><p>SMD Diode</p></td>
+                    <td><p>SGD2.01 for 1 long cut of 100 pieces</p></td>
+                </tr>
+                <tr>
+                    <td><p>14</p></td>
+                    <td><p>SMD Right Angle Male Header ( 2 pieces of 3 pin header 4 pieces of 2 pin header )</p></td>
+                    <td><p>SGD 4.35 for 1 row of 40 pins</p></td>
+                </tr>
+                <tr>
+                    <td><p>5</p></td>
+                    <td><p>Female to Female Dupont cables</p></td>
+                    <td><p>SGD 3.00 for 40 pieces</p></td>
+                </tr>
+                <tr>
+                    <td><p>9</p></td>
+                    <td><p>Male to Female Dupont cables</p></td>
+                    <td><p>SGD 3.00 for 40 pieces</p></td>
+                </tr>
+            </table>
+            <h4>Fabrication Techniques</h4>
+            <table>
+                <tr>
+                    <th style="width:25%"><p>Technique</p></th>
+                    <th><p>Fabrication component</p></th>
+                </tr>
+                <tr>
+                    <td><p>CAD</p></td>
+                    <td><p>VESA Adapter, Laptop Stand & Acrylic Cover</p></td>
+                </tr>
+                <tr>
+                    <td><p>CNC Milling</p></td>
+                    <td><p>Laptop Stand</p></td>
+                </tr>
+                <tr>
+                    <td><p>3D Printing</p></td>
+                    <td><p>VESA Adapter</p></td>
+                </tr>
+                <tr>
+                    <td><p>Laser Cutting</p></td>
+                    <td><p>Acrylic Cover ( Grill & Electronic Compartment )</p></td>
+                </tr>
+                <tr>
+                    <td><p>Eagle</p></td>
+                    <td><p>Schematic & PCB Design</p></td>
+                </tr>
+                <tr>
+                    <td><p>PCB Milling</p></td>
+                    <td><p>PCB Board</p></td>
+                </tr>
+                <tr>
+                    <td><p>Processing System</p></td>
+                    <td><p>ATtiny412</p></td>
+                </tr>
+                <tr>
+                    <td><p>Input Devices</p></td>
+                    <td><p>Light Dependent Resistor, Temperature Sensor ( LM35 ), Switch</p></td>
+                </tr>
+                <tr>
+                    <td><p>Output Devices</p></td>
+                    <td><p>LED & 12V DC Brushless Motor Fan</p></td>
+                </tr>
+                <tr>
+                    <td><p>Power</p></td>
+                    <td><p>12V AC to DC Power Supply</p></td>
+                </tr>
+            </table>
             <h4>RAW Files</h4>
             <p>You can find all my RAW files here:</p>
             <ul>
@@ -130,6 +281,8 @@
                 <li><a href="https://drive.google.com/drive/folders/196Gl8XW1sRSUMg3q1AekSdmdSrm0HbYG?usp=sharing">PCB gcode</a></li>
                 <li><a href="https://drive.google.com/drive/folders/1gBy2cbpC-zDvVF7tuA0tKR00rsUEj51n?usp=sharing">Arduino code</a></li>
             </ul>
+            <h4>Final Project video</h4>
+            <iframe width="auto" src="https://www.youtube.com/embed/j67H6ynXUnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <footer>
             <br>
